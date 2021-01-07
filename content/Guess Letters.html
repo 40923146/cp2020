@@ -122,7 +122,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='關於.html'>關於</a><li><a href='開發.html'>開發</a><li><a href='測試.html'>測試</a><li><a href='SSH協議.html'>SSH協議</a><li class='has-children'><a href='HW1.html'>HW1</a><ul class='dropdown'><li class='has-children'><a href='U14.html'>U14</a><ul class='dropdown'><li><a href='Overview 概述.html'>Overview 概述</a><li><a href='TCP and UDP.html'>TCP and UDP</a><li><a href='TCP IP Stack.html'>TCP IP Stack</a><li><a href='Networking Transfer Protocols 網絡傳輸協議.html'>Networking Transfer Protocols 網絡傳輸協議</a><li><a href='FTP.html'>FTP</a><li><a href='SSL.html'>SSL</a></li></ul><li class='has-children'><a href='U15.html'>U15</a><ul class='dropdown'><li><a href='Wireless LANs 無線局域網.html'>Wireless LANs 無線局域網</a><li><a href='Wireless Devices 無線設備.html'>Wireless Devices 無線設備</a><li><a href='Wireless Standards 無線標準.html'>Wireless Standards 無線標準</a><li><a href='Privacy and Security 隱私和安全.html'>Privacy and Security 隱私和安全</a><li><a href='Wireless Networking Types 無線網絡類型.html'>Wireless Networking Types 無線網絡類型</a></li>
+                     <li><a href='關於.html'>關於</a><li><a href='開發.html'>開發</a><li><a href='測試.html'>測試</a><li><a href='SSH協議.html'>SSH協議</a><li class='has-children'><a href='HW1.html'>HW1</a><ul class='dropdown'><li class='has-children'><a href='U14.html'>U14</a><ul class='dropdown'><li><a href='Overview 概述.html'>Overview 概述</a><li><a href='TCP and UDP.html'>TCP and UDP</a><li><a href='TCP IP Stack.html'>TCP IP Stack</a><li><a href='Networking Transfer Protocols 網絡傳輸協議.html'>Networking Transfer Protocols 網絡傳輸協議</a><li><a href='FTP.html'>FTP</a><li><a href='SSL.html'>SSL</a></li></li></ul></ul><li class='has-children'><a href='HW3.html'>HW3</a><ul class='dropdown'><li><a href='Tic Tac Toe Game 井字遊戲.html'>Tic Tac Toe Game 井字遊戲</a><li><a href='Pick Word.html'>Pick Word</a><li><a href='Guess Letters.html'>Guess Letters</a><li class='has-children'><a href='Hangman.html'>Hangman</a><ul class='dropdown'><li><a href='Sample Solution(示例解決方案).html'>Sample Solution(示例解決方案)</a><li><a href='程式試打.html'>程式試打</a></li>
                       </ul>
                 </nav>
               </div>
@@ -133,8 +133,37 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">SSL << <a href='SSL.html'>Previous</a> <a href='Wireless LANs 無線局域網.html'>Next</a> >> Wireless LANs 無線局域網<br /><h1>U15</h1>
-<br />SSL << <a href='SSL.html'>Previous</a> <a href='Wireless LANs 無線局域網.html'>Next</a> >> Wireless LANs 無線局域網</div>
+    <div id="tipue_search_content">Pick Word << <a href='Pick Word.html'>Previous</a> <a href='Hangman.html'>Next</a> >> Hangman<br /><h1>Guess Letters</h1>
+<p>Exercise 31（and<span> </span><span><a href="https://www.practicepython.org/solution/2017/01/08/31-guess-letters-solutions.html">Solution</a></span>）<br/>練習31（解答）</p>
+<p><em>This exercise is Part 2 of 3 of the Hangman exercise series. The other exercises are:<span> </span><a href="https://www.practicepython.org/exercise/2016/09/24/30-pick-word.html">Part 1</a><span> </span>and<span> </span><a href="https://www.practicepython.org/exercise/2017/01/10/32-hangman.html">Part 3</a>.<br/></em></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">該練習是《Hangman》練習系列3的第2部分。其他練習是：第1部分和第3部分。<br/></span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">Let’s continue building Hangman. In the game of Hangman, a clue word is given by the program that the player has to guess, letter by letter. The player guesses one letter at a time until the entire word has been guessed. (In the actual game, the player can only guess 6 letters incorrectly before losing).</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">讓我們繼續建立Hangman。在《Hangman》遊戲中，提示詞是由玩家逐字母猜測的程序給出的。玩家一次猜一個字母，直到猜完整個單詞。 （在實際遊戲中，玩家只能輸錯6個字母）。</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">Let’s say the word the player has to guess is “EVAPORATE”. For this exercise, write the logic that asks a player to guess a letter and displays letters in the clue word that were guessed correctly. For now, let the player guess an infinite number of times until they get the entire word. As a bonus, keep track of the letters the player guessed and display a different message if the player tries to guess that letter again. Remember to stop the game when all the letters have been guessed correctly! Don’t worry about choosing a word randomly or keeping track of the number of guesses the player has remaining - we will deal with those in a future exercise.</span></p>
+<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">假設玩家必須猜出的單詞是“ EVAPORATE”。在本練習中，編寫要求玩家猜出字母並在提示詞中顯示正確猜出的字母的邏輯。現在，讓玩家猜無限次，直到獲得完整的單詞為止。作為獎勵，跟踪玩家猜出的字母，如果玩家嘗試再次猜出該字母，則顯示不同的消息。記住正確猜出所有字母后，停止遊戲！不必擔心隨機選擇一個單詞或跟踪玩家剩餘的猜測數-我們將在以後的練習中處理這些猜測。</span></p>
+<p>An example interaction can look like this:</p>
+<figure class="highlight">
+<pre><code class="language-pycon" data-lang="pycon">&gt;&gt;&gt; Welcome to Hangman!
+_ _ _ _ _ _ _ _ _
+&gt;&gt;&gt; Guess your letter: S
+Incorrect!
+&gt;&gt;&gt; Guess your letter: E
+E _ _ _ _ _ _ _ E
+...</code></pre>
+</figure>
+<p>And so on, until the player gets the word.</p>
+<p>一個互相影響的例子如下所示:</p>
+<figure class="highlight">
+<pre><code class="language-pycon" data-lang="pycon">&gt;&gt;&gt;歡迎來到Hangman!
+_ _ _ _ _ _ _ _ _
+&gt;&gt;&gt;猜你的字母: S
+不對!
+&gt;&gt;&gt;猜你的字母: E
+E _ _ _ _ _ _ _ E
+...</code></pre>
+</figure>
+<p>依此類推，直到玩家明白。</p>
+<br />Pick Word << <a href='Pick Word.html'>Previous</a> <a href='Hangman.html'>Next</a> >> Hangman</div>
         
     <!-- footer -->
       <div class="container">
